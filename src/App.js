@@ -3,7 +3,6 @@ import { Switch, Route, NavLink } from "react-router-dom";
 import Movie from "./components/Movie";
 import FavMovie from "./components/FavMovie";
 import { useDispatch, useSelector } from "react-redux";
-import { movies } from "./movies";
 import { addFavorite, resetFavorite } from "./actions/favActions";
 
 function App() {
@@ -11,6 +10,8 @@ function App() {
   const [btnDisable, setBtnDisable] = useState(null);
   const favMovies = useSelector((store) => store.favReducer);
   const favDispatch = useDispatch();
+
+  const movies = useSelector((store) => store.movies_reducer);
 
   function sonrakiFilm() {
     setSira(sira + 1);
